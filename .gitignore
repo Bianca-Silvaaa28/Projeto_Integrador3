@@ -1,0 +1,60 @@
+# Diretórios de build
+/build/
+/app/build/
+/.gradle/
+/local.properties
+
+# Arquivos de cache da IDE
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Configurações específicas de sistema/usuário
+.DS_Store
+*.log
+*.tmp
+
+# Arquivos de cache do Android Studio
+.cxx/
+.externalNativeBuild/
+captures/
+*.hprof
+
+# Gradle
+.gradle/
+**/build/
+
+# Arquivos locais de propriedades
+local.properties
+
+# Cache de dependências do Kotlin/Jetpack Compose
+.kotlinc/
+.kts_cache/
+.kotlin_module/
+
+# Arquivos de teste gerados
+test-output/
+
+# Arquivos de chave de assinatura (não versionar!)
+*.jks
+*.keystore
+
+# IntelliJ
+out/
+
+# Configuração de execução/debug da IDE
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/usage.statistics.xml
+.idea/**/dictionaries
+.idea/**/shelf/
+
+# Arquivos de lock que podem variar entre ambientes
+*.lock
+
+# Se usar o NDK
+obj/
+
+# Se usar Firebase ou Google Services
+google-services.json
