@@ -9,7 +9,7 @@ import com.google.android.material.textfield.TextInputLayout
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_cadastro)
 
         val layoutEmail = findViewById<TextInputLayout>(R.id.editEmail)
         val layoutSenha = findViewById<TextInputLayout>(R.id.editSenha)
