@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    tools:ignore="MissingClass">
+
+    <LinearLayout
+        android:layout_width="354dp"
+        android:layout_height="671dp"
+        android:background="#3a5a40"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.365">
+
+        <!-- Título -->
+        <TextView
+            android:id="@+id/textViewTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="32dp"
+            android:text="SafeZone"
+            android:textColor="#dad7cd"
+            android:textSize="42sp"
+            android:textStyle="bold" />
+
+        <!-- Campo de entrada - Matricula -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="22dp">
+
+            <EditText
+                android:id="@+id/editTextMatricula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:background="@android:drawable/editbox_background"
+                android:hint="Digite seu ra"
+                android:inputType="textEmailAddress"
+                android:paddingEnd="8dp"
+                android:textColor="#3a5a40"
+                android:textColorHint="#3a5a40"
+                android:textSize="24sp" /> <!-- espaço pro olho -->
+
+            <ImageView
+                android:id="@+id/imageViewToggle"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end|center_vertical"
+                android:layout_marginTop="50dp"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Mostrar ou ocultar matricula"
+                android:src="@drawable/ic_visibility_off" />
+
+
+        </FrameLayout>
+
+        <Button
+            android:id="@+id/buttonLogar"
+            android:layout_width="1180dp"
+            android:layout_height="61dp"
+            android:layout_marginTop="60dp"
+            android:backgroundTint="#dad7cd"
+            android:text="Logar"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textviewLink"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:text="Ainda não tem cadastro? Clique aqui"
+            android:textColor="#dad7cd"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
