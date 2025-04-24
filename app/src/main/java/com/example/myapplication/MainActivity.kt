@@ -11,23 +11,23 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_cadastro)
 
-        val layoutEmail = findViewById<TextInputLayout>(R.id.editEmail)
-        val layoutSenha = findViewById<TextInputLayout>(R.id.editSenha)
-        val botaoEntrar = findViewById<Button>(R.id.button)
+//        val layoutEmail = findViewById<TextInputLayout>(R.id.editEmail)
+//        val layoutSenha = findViewById<TextInputLayout>(R.id.editSenha)
+//        val botaoEntrar = findViewById<Button>(R.id.button)
 
-        botaoEntrar.setOnClickListener {
-            val emailDigitado = layoutEmail.editText?.text.toString()
-            val senhaDigitada = layoutSenha.editText?.text.toString()
-
-            val emailCorreto = "bvds@aulakotlin.com"
-            val senhaCorreta = "123456"
-
-            if (emailDigitado == emailCorreto && senhaDigitada == senhaCorreta) {
-                val intent = Intent(this, BoasVindasActivity::class.java)
-                startActivity(intent)
-            } else {
-                Toast.makeText(this, "Email ou senha incorretos", Toast.LENGTH_SHORT).show()
-            }
-        }
+//        botaoEntrar.setOnClickListener {
+////            val emailDigitado = layoutEmail.editText?.text.toString()
+////            val senhaDigitada = layoutSenha.editText?.text.toString()
+//
+//            val emailCorreto = "bvds@aulakotlin.com"
+//            val senhaCorreta = "123456"
+//
+////            if (emailDigitado == emailCorreto && senhaDigitada == senhaCorreta) {
+////                val intent = Intent(this, BoasVindasActivity::class.java)
+////                startActivity(intent)
+////            } else {
+////                Toast.makeText(this, "Email ou senha incorretos", Toast.LENGTH_SHORT).show()
+////            }
+//        }
     }
 }

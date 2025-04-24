@@ -1,7 +1,9 @@
 package com.example.myapplication
 
+import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
+import android.os.Handler
+import android.os.Looper
 import androidx.appcompat.app.AppCompatActivity
 
 class BoasVindasActivity : AppCompatActivity() {
@@ -9,7 +11,10 @@ class BoasVindasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_boas_vindas)
 
-        val texto = findViewById<TextView>(R.id.textoBoasVindas)
-        texto.text = "Bem-vinda!"
+        // Aguarda 2 segundos e vai para a MainActivity
+        Handler(Looper.getMainLooper()).postDelayed({
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }, 2000) // tempo em milissegundos (2 segundos)
     }
 }
