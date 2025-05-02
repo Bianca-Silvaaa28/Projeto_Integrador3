@@ -24,7 +24,6 @@
 
         <!-- Título -->
         <TextView
-            android:id="@+id/textViewTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
@@ -34,19 +33,30 @@
             android:textSize="42sp"
             android:textStyle="bold" />
 
-        <!-- Campo de entrada - Matricula -->
+        <EditText
+            android:id="@+id/userEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_bg"
+            android:layout_marginTop="100dp"
+            android:hint="Digite seu e-mail"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="22dp">
 
             <EditText
+                android:id="@+id/userPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 android:background="@drawable/edittext_bg"
-                android:layout_marginTop="100dp"
-                android:hint="Digite seu RA"
+                android:hint="Digite sua senha"
                 android:padding="12dp"
                 android:textColor="#000000"
                 android:textColorHint="#999999" /> <!-- espaço pro olho -->
@@ -56,15 +66,15 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="end|center_vertical"
-                android:layout_marginTop="50dp"
-                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="13dp"
                 android:contentDescription="Mostrar ou ocultar matricula"
                 android:src="@drawable/ic_visibility_off" />
-
 
         </FrameLayout>
 
         <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/button_bg"
@@ -74,7 +84,7 @@
             android:textColor="#344e41" />
 
         <TextView
-            android:id="@+id/textviewLink"
+            android:id="@+id/tvCadastrar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="60dp"
