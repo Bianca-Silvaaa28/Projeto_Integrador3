@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
+    tools:context=".LoginActivity"
     tools:ignore="MissingClass">
 
     <LinearLayout
@@ -70,6 +70,16 @@
                 android:layout_marginEnd="13dp"
                 android:contentDescription="Mostrar ou ocultar matricula"
                 android:src="@drawable/ic_visibility_off" />
+
+            <TextView
+                android:id="@+id/tvRecuperarAcesso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:text="Esqueceu a senha? Clique aqui"
+                android:textAlignment="center"
+                android:textColor="#dad7cd"
+                android:textSize="16sp" />
 
         </FrameLayout>
 

@@ -11,9 +11,9 @@ class BoasVindasActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_boas_vindas)
 
-        // Aguarda 2 segundos e vai para a MainActivity
+        // Aguarda 2 segundos e vai para a LoginActivity
         Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
             finish()
         }, 2000) // tempo em milissegundos (2 segundos)
     }

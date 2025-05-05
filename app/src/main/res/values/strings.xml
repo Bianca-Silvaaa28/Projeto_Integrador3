@@ -9,4 +9,5 @@
     <string name="info_risco">Informações relevantes sobre o risco.</string>
     <string name="data_risco">01/05/2025</string>
     <string name="capturar_imagem">Capturar imagem do risco</string>
+    <string name="deslogar">Log Off</string>
 </resources>
