@@ -14,7 +14,7 @@ class RegistrarRiscoActivity: AppCompatActivity()  {
         val botaoRetornar = findViewById<ImageButton>(R.id.button_back)
 
         botaoRetornar.setOnClickListener {
-            finish()
+            finish();
         }
     }
 }
