@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
                 if (task.isSuccessful) {
                     // daqui dá pra direcionar pra outras atividades já logado
                     // por exemplo:
-                     val intent = Intent(this, LoggedAreaActivity::class.java)
+                     val intent = Intent(this, ListaRiscosActivity::class.java)
                      startActivity(intent)
                 } else {
                     Toast.makeText(

@@ -11,7 +11,8 @@
 
         <activity android:name=".MainActivity" />
         <activity android:name=".CadastrarUsuarioActivity" />
-        <activity android:name=".LoggedAreaActivity" />
+        <activity android:name=".ListaRiscosActivity" />
+        <activity android:name=".RegistrarRiscoActivity" />
 
         <activity
             android:name=".BoasVindasActivity"

@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">SafeZone</string>
+
+    <string name="btn_selecionar_rt">Selecionar RT</string>
+    <string name="btn_adicionar">+</string>
+    <string name="tv_titulo">RISCOS REGISTRADOS</string>
+    <string name="recycler_description">Lista de riscos registrados</string>
+    <string name="titulo_risco">Título do Risco</string>
+    <string name="info_risco">Informações relevantes sobre o risco.</string>
+    <string name="data_risco">01/05/2025</string>
+    <string name="capturar_imagem">Capturar imagem do risco</string>
 </resources>
