@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="@drawable/rounded_box"
+    android:padding="12dp"
+    android:layout_marginBottom="12dp">
+
+    <!-- Conteúdo da caixa com fundo claro -->
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Título"
+            android:textColor="#2F5233"
+            android:textStyle="bold"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Informações"
+            android:textColor="#2F5233"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Data"
+            android:textColor="#2F5233"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Local"
+            android:textColor="#2F5233"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <!-- Ícone da câmera -->
+    <ImageView
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        android:src="@android:drawable/ic_menu_camera"
+        android:background="#C8D3B5"
+        android:padding="12dp"
+        android:contentDescription="Foto"
+        android:layout_marginStart="8dp"
+        android:scaleType="centerInside"
+        android:cropToPadding="true" />
+</LinearLayout>
