@@ -9,10 +9,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
 
-        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".CadastrarUsuarioActivity" />
         <activity android:name=".ListaRiscosActivity" />
         <activity android:name=".RegistrarRiscoActivity" />
+        <activity android:name=".ResetSenhaActivity" />
 
         <activity
             android:name=".BoasVindasActivity"

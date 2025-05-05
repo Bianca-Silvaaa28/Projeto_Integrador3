@@ -8,7 +8,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
 
-class MainActivity : AppCompatActivity() {
+class LoginActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
 
@@ -20,6 +20,9 @@ class MainActivity : AppCompatActivity() {
 
         var layoutEmail = findViewById<EditText>(R.id.userEmail)
         val layoutSenha = findViewById<EditText>(R.id.userPassword)
+
+        val linkResetSenha = findViewById<TextView>(R.id.tvRecuperarAcesso)
+
         val botaoEntrar = findViewById<Button>(R.id.btnLogin)
 
         val linkCadastrar = findViewById<TextView>(R.id.tvCadastrar)
@@ -29,6 +32,11 @@ class MainActivity : AppCompatActivity() {
             val senhaDigitada = layoutSenha.text.toString()
 
             login(emailDigitado, senhaDigitada)
+        }
+
+        linkResetSenha.setOnClickListener {
+            val intent = Intent(this, ResetSenhaActivity::class.java)
+            startActivity(intent)
         }
 
         linkCadastrar.setOnClickListener {

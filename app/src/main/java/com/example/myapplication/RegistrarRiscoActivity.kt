@@ -13,8 +13,15 @@ class RegistrarRiscoActivity: AppCompatActivity()  {
 
         val botaoRetornar = findViewById<ImageButton>(R.id.button_back)
 
+        val botaoRegistrarRisco = findViewById<Button>(R.id.button_register_risk)
+
         botaoRetornar.setOnClickListener {
-            finish();
+            finish()
+        }
+
+        botaoRegistrarRisco.setOnClickListener {
+            // implementar lógica de salvamento de dados no BD
+            finish()
         }
     }
 }

@@ -2,7 +2,6 @@ package com.example.myapplication
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
@@ -42,8 +41,7 @@ class CadastrarUsuarioActivity : AppCompatActivity() {
                         "Cadastro realizado com sucesso!",
                         Toast.LENGTH_SHORT,
                     ).show()
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
+                    finish()
                 } else {
                     Toast.makeText(
                         baseContext,

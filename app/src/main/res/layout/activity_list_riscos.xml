@@ -5,11 +5,32 @@
     android:background="#2F5233"
     android:padding="16dp">
 
+    <FrameLayout
+        android:id="@+id/back_container"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="5dp"
+        android:background="@drawable/border_black"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/deslogar"
+            android:textSize="22sp"
+            android:padding="2dp"/>
+    </FrameLayout>
+
     <LinearLayout
         android:id="@+id/mainContent"
+        android:layout_below="@id/back_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginTop="16dp"
         android:layout_centerInParent="true">
 
         <TextView
