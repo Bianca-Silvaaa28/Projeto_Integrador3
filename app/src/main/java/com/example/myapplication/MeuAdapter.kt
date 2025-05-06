@@ -11,10 +11,8 @@ class MeuAdapter(private val listaRiscos: List<Risco>) : RecyclerView.Adapter<Me
 
     class RiscoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val titulo: TextView = itemView.findViewById(R.id.titulo_risco)
-        val informacoes: TextView = itemView.findViewById(R.id.informacoes_risco)
         val data: TextView = itemView.findViewById(R.id.data_risco)
         val local: TextView = itemView.findViewById(R.id.local_risco)
-        val icCamera: ImageView = itemView.findViewById(R.id.ic_camera)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RiscoViewHolder {
@@ -24,11 +22,9 @@ class MeuAdapter(private val listaRiscos: List<Risco>) : RecyclerView.Adapter<Me
 
     override fun onBindViewHolder(holder: RiscoViewHolder, position: Int) {
         val risco = listaRiscos[position]
-        holder.titulo.text = risco.titulo
-        holder.informacoes.text = risco.informacoes
+        holder.titulo.text = risco.descricao
         holder.data.text = risco.data
-        holder.local.text = risco.local
-        holder.icCamera.setImageResource(R.drawable.ic_add)
+        holder.local.text = risco.localReferencia
     }
 
     override fun getItemCount(): Int = listaRiscos.size

@@ -18,6 +18,12 @@ class LoginActivity : AppCompatActivity() {
 
         auth = Firebase.auth
 
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            val intent = Intent(this, ListaRiscosActivity::class.java)
+            startActivity(intent)
+        }
+
         var layoutEmail = findViewById<EditText>(R.id.userEmail)
         val layoutSenha = findViewById<EditText>(R.id.userPassword)
 
