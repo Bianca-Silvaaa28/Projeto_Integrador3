@@ -40,22 +40,22 @@ class RegistrarRiscoActivity: AppCompatActivity()  {
                 localReferenciaRisco.text.toString(),
                 emailUsuario.toString())
 
-                db.collection("riscos")
-                .add(registroRisco)
-                .addOnSuccessListener { _ ->
-                    Toast.makeText(
-                        baseContext,
-                        "Risco registrado com sucesso!",
-                        Toast.LENGTH_SHORT,
-                    ).show()
-                }
-                .addOnFailureListener { _ ->
-                    Toast.makeText(
-                        baseContext,
-                        "Falha no registro de risco. Por favor, tente novamente!",
-                        Toast.LENGTH_SHORT,
-                    ).show()
-                }
+            db.collection("riscos")
+            .add(registroRisco)
+            .addOnSuccessListener { _ ->
+                Toast.makeText(
+                    baseContext,
+                    "Risco registrado com sucesso!",
+                    Toast.LENGTH_SHORT,
+                ).show()
+            }
+            .addOnFailureListener { _ ->
+                Toast.makeText(
+                    baseContext,
+                    "Falha no registro de risco. Por favor, tente novamente!",
+                    Toast.LENGTH_SHORT,
+                ).show()
+            }
 
             finish()
         }
