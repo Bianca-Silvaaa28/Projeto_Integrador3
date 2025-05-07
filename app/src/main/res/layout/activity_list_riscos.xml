@@ -52,23 +52,13 @@
             android:layout_marginBottom="24dp">
 
             <Button
-                android:id="@+id/buttonSelectRT"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:text="Selecionar RT"
-                android:textSize="22sp"
-                android:backgroundTint="#E5E5E5"
-                android:textColor="#2F5233"
-                android:padding="12dp"/>
-
-            <Button
                 android:id="@+id/buttonAdd"
-                android:layout_width="80dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
                 android:backgroundTint="#E5E5E5"
-                android:text="+"
-                android:textSize="24sp"
+                android:text="Registrar Novo Risco"
+                android:textSize="22sp"
                 android:textColor="#2F5233"
                 android:padding="12dp"
                 android:contentDescription="Adicionar" />

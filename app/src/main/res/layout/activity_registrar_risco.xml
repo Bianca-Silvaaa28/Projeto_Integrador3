@@ -45,32 +45,33 @@
                 android:id="@+id/text_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="REGISTRAR RISCO"
+                android:text="REGISTRAR NOVO RISCO"
                 android:textColor="#FFFFFF"
                 android:textSize="28sp"
                 android:textStyle="bold"
                 android:gravity="center"
                 android:layout_marginTop="8dp"/>
 
-            <!-- Botão Selecionar RT -->
-            <Button
-                android:id="@+id/button_select_rt"
-                style="@style/MyButtonStyle"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Selecionar RT"
-                android:textSize="20sp"
-                android:layout_marginTop="24dp"/>
-
             <!-- Caixa de descrição com bordas arredondadas -->
             <EditText
                 android:id="@+id/edit_description"
                 android:layout_width="271dp"
-                android:layout_height="219dp"
+                android:layout_height="180dp"
                 android:layout_marginTop="24dp"
                 android:background="@drawable/rounded_background"
                 android:gravity="top|start"
-                android:hint="Descrição:"
+                android:hint="Descrição do risco"
+                android:padding="8dp"
+                android:textSize="18sp"/>
+
+            <EditText
+                android:id="@+id/edit_local_referencia"
+                android:layout_width="271dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/rounded_background"
+                android:gravity="top|start"
+                android:hint="Local de referência"
                 android:padding="8dp"
                 android:textSize="18sp"/>
 

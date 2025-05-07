@@ -1,8 +1,9 @@
 package com.example.myapplication
 
 data class Risco(
-    val titulo: String,
-    val informacoes: String,
+    val descricao: String,
     val data: String,
-    val local: String
+    val localReferencia: String,
+    // TODO: adicionar geolocalização
+    val usuario: String?
 )
