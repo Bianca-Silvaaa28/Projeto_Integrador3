@@ -72,12 +72,12 @@ class ListaRiscosActivity : AppCompatActivity() {
 
         for (document in documents) {
             val descricao = document.data.get("descricao").toString()
-            val data = document.data.get("data").toString()
             val localReferencia = document.data.get("localReferencia").toString()
             val emailUsuario = document.data.get("localReferencia").toString()
             val latitude = document.data.get("latitude").toString()
             val longitude = document.data.get("longitude").toString()
 
+            val data = document.get("data").toString()
             val dataFormatada = formatarData(data)
 
             val risco = Risco(
