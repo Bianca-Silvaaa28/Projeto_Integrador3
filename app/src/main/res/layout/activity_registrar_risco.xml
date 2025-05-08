@@ -62,6 +62,7 @@
                 android:gravity="top|start"
                 android:hint="Descrição do risco"
                 android:padding="8dp"
+                android:textColor="@color/black"
                 android:textSize="18sp"/>
 
             <EditText
@@ -73,6 +74,7 @@
                 android:gravity="top|start"
                 android:hint="Local de referência"
                 android:padding="8dp"
+                android:textColor="@color/black"
                 android:textSize="18sp"/>
 
             <Space
@@ -121,6 +123,21 @@
                         android:src="@drawable/ic_attach_file"/>
                 </FrameLayout>
             </LinearLayout>
+
+            <!-- ImageView para preview da imagem -->
+            <ImageView
+                android:id="@+id/image_preview"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="16dp"
+                android:scaleType="centerCrop"
+                android:background="@drawable/border_black"
+                android:contentDescription="Preview da imagem"
+                android:visibility="gone"/> <!-- Começa invisível -->
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp"/> <!-- Ajustei o space -->
 
             <!-- Botão Registrar risco -->
             <Button
