@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#dad7cd">
+
+    <LinearLayout
+        android:layout_width="364dp"
+        android:layout_height="669dp"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/rounded_bg"
+        android:backgroundTint="#3a5a40"
+        android:clipChildren="false"
+        android:clipToPadding="false"
+        android:elevation="4dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SafeZone"
+            android:layout_marginVertical="24dp"
+            android:textColor="#dad7cd"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="24dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
+            android:text="RECUPERAÇÃO DE ACESSO"
+            android:textColor="#dad7cd"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="E-MAIL:"
+            android:textStyle="bold"
+            android:layout_marginVertical="14dp"
+            android:textColor="#dad7cd" />
+
+        <EditText
+            android:id="@+id/userEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_bg"
+            android:hint="Digite seu e-mail"
+            android:padding="12dp"
+            android:textColor="#000000"
+            android:textColorHint="#999999" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnResetSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_bg"
+            android:text="RECUPERAR ACESSO"
+            android:layout_marginVertical="44dp"
+            android:textAllCaps="false"
+            android:textColor="#344e41" />
+
+    </LinearLayout>
+</LinearLayout>
+
