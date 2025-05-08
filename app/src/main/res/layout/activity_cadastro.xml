@@ -80,7 +80,8 @@
             android:hint="Crie uma senha"
             android:padding="12dp"
             android:textColor="#000000"
-            android:textColorHint="#999999" />
+            android:textColorHint="#999999"
+            android:inputType="textPassword" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btnCadastrar"

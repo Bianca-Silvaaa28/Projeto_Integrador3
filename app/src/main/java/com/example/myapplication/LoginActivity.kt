@@ -68,4 +68,14 @@ class LoginActivity : AppCompatActivity() {
                 }
             }
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        var layoutEmail = findViewById<EditText>(R.id.userEmail)
+        val layoutSenha = findViewById<EditText>(R.id.userPassword)
+
+        layoutEmail.text.clear()
+        layoutSenha.text.clear()
+    }
 }
