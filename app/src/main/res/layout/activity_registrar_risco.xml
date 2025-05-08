@@ -58,11 +58,12 @@
                 android:layout_width="271dp"
                 android:layout_height="180dp"
                 android:layout_marginTop="24dp"
-                android:background="@drawable/rounded_background"
+                android:background="@drawable/edittext_bg"
                 android:gravity="top|start"
                 android:hint="Descrição do risco"
                 android:padding="8dp"
-                android:textColor="@color/black"
+                android:textColor="#000000"
+                android:textColorHint="#999999"
                 android:textSize="18sp"/>
 
             <EditText
@@ -70,11 +71,12 @@
                 android:layout_width="271dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="24dp"
-                android:background="@drawable/rounded_background"
+                android:background="@drawable/edittext_bg"
                 android:gravity="top|start"
                 android:hint="Local de referência"
                 android:padding="8dp"
-                android:textColor="@color/black"
+                android:textColor="#000000"
+                android:textColorHint="#999999"
                 android:textSize="18sp"/>
 
             <Space
