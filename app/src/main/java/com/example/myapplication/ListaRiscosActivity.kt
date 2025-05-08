@@ -1,7 +1,9 @@
 package com.example.myapplication
 
 import android.content.Intent
+import android.opengl.Visibility
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.TextView
@@ -33,21 +35,7 @@ class ListaRiscosActivity : AppCompatActivity() {
         val botaoAdicionar = findViewById<Button>(R.id.buttonAdd)
         val botaoDeslogar = findViewById<FrameLayout>(R.id.back_container)
 
-        val emailUsuario = FirebaseAuth.getInstance().currentUser?.email
-
-        db.collection("riscos")
-            .whereEqualTo("emailUsuario", emailUsuario)
-            .get()
-            .addOnSuccessListener { documents ->
-                 listarRiscosRegistrados(documents)
-            }
-            .addOnFailureListener { exception ->
-                Toast.makeText(
-                    this,
-                    "Não foi possível obter a lista de riscos registrados.",
-                    Toast.LENGTH_SHORT
-                ).show()
-            }
+        obterDadosBD()
 
         botaoAdicionar.setOnClickListener {
             val intent = Intent(this, RegistrarRiscoActivity::class.java)
@@ -58,6 +46,25 @@ class ListaRiscosActivity : AppCompatActivity() {
             Firebase.auth.signOut()
             finish()
         }
+    }
+
+    private fun obterDadosBD()
+    {
+        val emailUsuario = FirebaseAuth.getInstance().currentUser?.email
+
+        db.collection("riscos")
+            .whereEqualTo("emailUsuario", emailUsuario)
+            .get()
+            .addOnSuccessListener { documents ->
+                listarRiscosRegistrados(documents)
+            }
+            .addOnFailureListener { exception ->
+                Toast.makeText(
+                    this,
+                    "Não foi possível obter a lista de riscos registrados.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
     }
 
     private fun listarRiscosRegistrados(documents: QuerySnapshot){
@@ -83,6 +90,9 @@ class ListaRiscosActivity : AppCompatActivity() {
             listaRiscos.add(risco)
         }
 
+        if (listaRiscos.size > 0)
+            findViewById<TextView>(R.id.tv_sem_risco).visibility = View.GONE
+
         recyclerView.adapter = MeuAdapter(listaRiscos)
     }
 
@@ -94,5 +104,11 @@ class ListaRiscosActivity : AppCompatActivity() {
         val dataFormatada = date?.let { formatoDesejado.format(it) }
 
         return dataFormatada
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        obterDadosBD()
     }
 }

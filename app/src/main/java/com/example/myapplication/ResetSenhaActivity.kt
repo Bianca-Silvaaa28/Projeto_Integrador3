@@ -44,4 +44,12 @@ class ResetSenhaActivity : AppCompatActivity() {
                 }
             }
     }
+
+    override fun onResume() {
+        super.onResume()
+
+        var layoutEmail = findViewById<EditText>(R.id.userEmail)
+
+        layoutEmail.text.clear()
+    }
 }
