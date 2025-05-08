@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "524222016883",
+    "project_id": "pi3-safezone",
+    "storage_bucket": "pi3-safezone.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524222016883:android:fac851e7a1f870b36d2906",
+        "android_client_info": {
+          "package_name": "com.example.myapplication"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJ8r6ntweF-M4uvprwDjktB2OmqbTztWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
