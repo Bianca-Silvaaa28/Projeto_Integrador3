@@ -6,5 +6,6 @@ data class Risco(
     val localReferencia: String,
     val emailUsuario: String,
     val latitude: String,
-    val longitude: String
+    val longitude: String,
+    val imagemBase64: String?
 )

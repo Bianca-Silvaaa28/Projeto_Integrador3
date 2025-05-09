@@ -40,4 +40,12 @@
             android:textColor="@android:color/black"/>
     </LinearLayout>
 
+    <!-- Ícone de câmera -->
+    <ImageView
+        android:id="@+id/ic_camera"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/ic_add"
+        android:contentDescription="Câmera"/>
+
 </LinearLayout>

@@ -76,6 +76,7 @@ class ListaRiscosActivity : AppCompatActivity() {
             val emailUsuario = document.data.get("localReferencia").toString()
             val latitude = document.data.get("latitude").toString()
             val longitude = document.data.get("longitude").toString()
+            val imagemBase64 = document.data.get("imagemBase64").toString()
 
             val data = document.get("data").toString()
             val dataFormatada = formatarData(data)
@@ -86,7 +87,8 @@ class ListaRiscosActivity : AppCompatActivity() {
                 localReferencia,
                 emailUsuario,
                 latitude,
-                longitude)
+                longitude,
+                imagemBase64)
             listaRiscos.add(risco)
         }
 
