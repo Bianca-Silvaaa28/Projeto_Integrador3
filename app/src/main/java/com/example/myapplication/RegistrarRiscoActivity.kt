@@ -265,16 +265,6 @@ class RegistrarRiscoActivity : AppCompatActivity() {
                     botaoRegistrarRisco.isEnabled = true
                 }
             }
-            override fun onLocationAvailability(locationAvailability: LocationAvailability) {
-                if (!locationAvailability.isLocationAvailable) {
-                    Toast.makeText(
-                        this@RegistrarRiscoActivity,
-                        "Localização não disponível. Verifique as configurações do GPS.",
-                        Toast.LENGTH_LONG
-                    ).show()
-                    botaoRegistrarRisco.isEnabled = true
-                }
-            }
         }
 
         if (ActivityCompat.checkSelfPermission(
