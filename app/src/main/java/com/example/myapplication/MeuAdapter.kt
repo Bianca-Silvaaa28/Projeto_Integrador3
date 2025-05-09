@@ -1,5 +1,7 @@
 package com.example.myapplication
 
+import android.graphics.BitmapFactory
+import android.util.Base64
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +15,7 @@ class MeuAdapter(private val listaRiscos: List<Risco>) : RecyclerView.Adapter<Me
         val titulo: TextView = itemView.findViewById(R.id.titulo_risco)
         val data: TextView = itemView.findViewById(R.id.data_risco)
         val local: TextView = itemView.findViewById(R.id.local_risco)
+        val image: ImageView = itemView.findViewById(R.id.ic_camera)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RiscoViewHolder {
@@ -25,6 +28,12 @@ class MeuAdapter(private val listaRiscos: List<Risco>) : RecyclerView.Adapter<Me
         holder.titulo.text = risco.descricao
         holder.data.text = risco.data
         holder.local.text = risco.localReferencia
+        if (risco.imagemBase64 != null) {
+            val imageBytes = Base64.decode(risco.imagemBase64, Base64.DEFAULT)
+            val bitmap = BitmapFactory.decodeByteArray(imageBytes, 0, imageBytes.size)
+
+            holder.image.setImageBitmap(bitmap)
+        }
     }
 
     override fun getItemCount(): Int = listaRiscos.size
