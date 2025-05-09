@@ -3,6 +3,7 @@ package com.example.myapplication
 import android.Manifest
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
@@ -13,42 +14,48 @@ import androidx.core.content.ContextCompat
 
 class BoasVindasActivity : AppCompatActivity() {
 
-    // Código usado para identificar a solicitação de permissão
-    private val REQUEST_LOCATION_PERMISSION = 1001
+    private val REQUEST_ALL_PERMISSIONS = 1001
 
-    // Nome do arquivo SharedPreferences e chave usada para armazenar o status
     private val PREF_NAME = "permissoes"
-    private val KEY_LOCALIZACAO_SOLICITADA = "localizacao_solicitada"
+    private val KEY_PERMISSOES_SOLICITADAS = "permissoes_solicitadas"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_boas_vindas)
 
-        // Verifica se já foi solicitada a permissão anteriormente
-        if (jaSolicitouPermissao()) {
-            // Se sim, apenas aguarda 2 segundos e vai para a próxima tela
+        if (jaSolicitouPermissoes()) {
             iniciarLoginComDelay()
         } else {
-            // Se não, solicita a permissão de localização
-            verificarOuSolicitarPermissaoLocalizacao()
+            verificarOuSolicitarPermissoes()
         }
     }
 
-    // Função que verifica se a permissão de localização já foi concedida
-    private fun verificarOuSolicitarPermissaoLocalizacao() {
-        val permissao = Manifest.permission.ACCESS_FINE_LOCATION
-
-        // Verifica se a permissão já foi concedida
-        if (ContextCompat.checkSelfPermission(this, permissao) != PackageManager.PERMISSION_GRANTED) {
-            // Se não, solicita a permissão
-            ActivityCompat.requestPermissions(this, arrayOf(permissao), REQUEST_LOCATION_PERMISSION)
+    private fun verificarOuSolicitarPermissoes() {
+        val permissoesNecessarias = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.CAMERA,
+                Manifest.permission.READ_MEDIA_IMAGES
+            )
         } else {
-            // Se já tem permissão, segue normalmente para o login com delay
+            arrayOf(
+                Manifest.permission.ACCESS_FINE_LOCATION,
+                Manifest.permission.CAMERA,
+                Manifest.permission.READ_EXTERNAL_STORAGE
+            )
+        }
+
+        val permissoesNegadas = permissoesNecessarias.filter {
+            ContextCompat.checkSelfPermission(this, it) != PackageManager.PERMISSION_GRANTED
+        }
+
+        if (permissoesNegadas.isNotEmpty()) {
+            ActivityCompat.requestPermissions(this, permissoesNegadas.toTypedArray(), REQUEST_ALL_PERMISSIONS)
+        } else {
             iniciarLoginComDelay()
         }
     }
 
-    // Inicia a próxima tela com um atraso de 2 segundos (splash)
     private fun iniciarLoginComDelay() {
         Handler(Looper.getMainLooper()).postDelayed({
             startActivity(Intent(this, LoginActivity::class.java))
@@ -56,7 +63,6 @@ class BoasVindasActivity : AppCompatActivity() {
         }, 2000)
     }
 
-    // Callback que é chamado quando o usuário responde à solicitação de permissão
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -64,33 +70,28 @@ class BoasVindasActivity : AppCompatActivity() {
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
 
-        // Verifica se a resposta é da permissão de localização
-        if (requestCode == REQUEST_LOCATION_PERMISSION) {
-
-            // Salva que a permissão já foi solicitada (independente da resposta)
+        if (requestCode == REQUEST_ALL_PERMISSIONS) {
             salvarQueJaSolicitou()
 
-            // Se a permissão foi concedida
-            if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                Toast.makeText(this, "Permissão de localização concedida", Toast.LENGTH_SHORT).show()
+            val todasConcedidas = grantResults.all { it == PackageManager.PERMISSION_GRANTED }
+
+            if (todasConcedidas) {
+                Toast.makeText(this, "Todas as permissões concedidas", Toast.LENGTH_SHORT).show()
             } else {
-                Toast.makeText(this, "Permissão negada. O app pode não funcionar corretamente.", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Algumas permissões foram negadas. O app pode não funcionar corretamente.", Toast.LENGTH_LONG).show()
             }
 
-            // Depois da resposta (sim ou não), segue normalmente para o login
             iniciarLoginComDelay()
         }
     }
 
-    // Armazena no SharedPreferences que a permissão já foi solicitada
     private fun salvarQueJaSolicitou() {
         val prefs = getSharedPreferences(PREF_NAME, MODE_PRIVATE)
-        prefs.edit().putBoolean(KEY_LOCALIZACAO_SOLICITADA, true).apply()
+        prefs.edit().putBoolean(KEY_PERMISSOES_SOLICITADAS, true).apply()
     }
 
-    // Verifica se a permissão já foi solicitada anteriormente
-    private fun jaSolicitouPermissao(): Boolean {
+    private fun jaSolicitouPermissoes(): Boolean {
         val prefs = getSharedPreferences(PREF_NAME, MODE_PRIVATE)
-        return prefs.getBoolean(KEY_LOCALIZACAO_SOLICITADA, false)
+        return prefs.getBoolean(KEY_PERMISSOES_SOLICITADAS, false)
     }
 }
