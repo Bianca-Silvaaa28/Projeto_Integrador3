@@ -12,6 +12,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.Firebase
+import com.google.firebase.Timestamp
 import com.google.firebase.auth.auth
 import com.google.firebase.firestore.QuerySnapshot
 import com.google.firebase.firestore.firestore
@@ -78,12 +79,11 @@ class ListaRiscosActivity : AppCompatActivity() {
             val longitude = document.data.get("longitude").toString()
             val imagemBase64 = document.data.get("imagemBase64").toString()
 
-            val data = document.get("data").toString()
-            val dataFormatada = formatarData(data)
+            val timestamp = document.getTimestamp("data")
 
             val risco = Risco(
                 descricao,
-                dataFormatada ?: "",
+                timestamp ?: Timestamp.now(),
                 localReferencia,
                 emailUsuario,
                 latitude,
@@ -96,16 +96,6 @@ class ListaRiscosActivity : AppCompatActivity() {
             findViewById<TextView>(R.id.tv_sem_risco).visibility = View.GONE
 
         recyclerView.adapter = MeuAdapter(listaRiscos)
-    }
-
-    private fun formatarData(data: String): String?{
-
-        val formatoOriginal = SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH)
-        val date: Date? = formatoOriginal.parse(data)
-        val formatoDesejado = SimpleDateFormat("dd/MM/yyyy, HH:mm", Locale.getDefault())
-        val dataFormatada = date?.let { formatoDesejado.format(it) }
-
-        return dataFormatada
     }
 
     override fun onResume() {
