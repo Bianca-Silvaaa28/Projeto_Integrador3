@@ -38,6 +38,7 @@ class RegistrarRiscoActivity : AppCompatActivity() {
     private lateinit var botaoCamera: ImageButton
     private lateinit var botaoAnexo: ImageButton
     private lateinit var imagePreview: ImageView
+    private lateinit var backButton: ImageButton
 
     private var currentPhotoUri: Uri? = null
     private var anexoPhotoUri: Uri? = null
@@ -55,6 +56,7 @@ class RegistrarRiscoActivity : AppCompatActivity() {
         botaoCamera = findViewById(R.id.button_camera)
         botaoAnexo = findViewById(R.id.button_attachment)
         imagePreview = findViewById(R.id.image_preview)
+        backButton = findViewById(R.id.button_back)
 
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
@@ -74,6 +76,10 @@ class RegistrarRiscoActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
             initiateLocationAndSaveRisk()
+        }
+
+        backButton.setOnClickListener {
+            finish()
         }
     }
 

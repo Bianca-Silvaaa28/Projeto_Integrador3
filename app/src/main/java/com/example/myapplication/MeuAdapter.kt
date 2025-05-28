@@ -8,6 +8,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import java.text.SimpleDateFormat
+import java.util.Date
+import java.util.Locale
 
 class MeuAdapter(private val listaRiscos: List<Risco>) : RecyclerView.Adapter<MeuAdapter.RiscoViewHolder>() {
 
@@ -26,7 +29,7 @@ class MeuAdapter(private val listaRiscos: List<Risco>) : RecyclerView.Adapter<Me
     override fun onBindViewHolder(holder: RiscoViewHolder, position: Int) {
         val risco = listaRiscos[position]
         holder.titulo.text = risco.descricao
-        holder.data.text = risco.data
+        holder.data.text = formatarData(risco.data.toDate())
         holder.local.text = risco.localReferencia
         if (risco.imagemBase64 != null) {
             val imageBytes = Base64.decode(risco.imagemBase64, Base64.DEFAULT)
@@ -37,4 +40,11 @@ class MeuAdapter(private val listaRiscos: List<Risco>) : RecyclerView.Adapter<Me
     }
 
     override fun getItemCount(): Int = listaRiscos.size
+
+    fun formatarData(data: Date?): String? {
+        if (data == null) return null
+
+        val formatoDesejado = SimpleDateFormat("dd/MM/yyyy, HH:mm", Locale.getDefault())
+        return formatoDesejado.format(data)
+    }
 }
