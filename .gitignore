@@ -57,4 +57,4 @@ out/
 obj/
 
 # Se usar Firebase ou Google Services
-google-services.json
+app/google-services.json

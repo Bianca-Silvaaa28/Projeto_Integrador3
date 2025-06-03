@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#2F5233"
+    android:padding="16dp">
+
+    <FrameLayout
+        android:id="@+id/back_container"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:padding="5dp"
+        android:background="@drawable/border_black"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/deslogar"
+            android:textColor="@color/black"
+            android:textSize="22sp"
+            android:padding="2dp"/>
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/mainContent"
+        android:layout_below="@id/back_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="RISCOS REGISTRADOS"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:textSize="32sp"
+            android:gravity="center"
+            android:layout_marginBottom="24dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="24dp">
+
+            <Button
+                android:id="@+id/buttonAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:backgroundTint="#E5E5E5"
+                android:text="Registrar Novo Risco"
+                android:textSize="22sp"
+                android:textColor="#2F5233"
+                android:padding="12dp"
+                android:contentDescription="Adicionar" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_riscos"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <TextView
+            android:id="@+id/tv_sem_risco"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="50dp"
+            android:text="Você não registrou nenhum risco até o momento."
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:visibility="visible"
+            />
+
+    </LinearLayout>
+</RelativeLayout>

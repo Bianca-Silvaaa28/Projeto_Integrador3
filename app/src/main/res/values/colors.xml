@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- Notification -->
+    <color name="notification_icon">#FF757575</color>
+    <color name="notification_button">#77757575</color>
+    <color name="notification_button_mask">#42757575</color>
+
+    <color name="verdeEscuro">#3a5a40</color>
+    <color name="itemBackground">#D3D3B8</color>
 </resources>

@@ -1,15 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
-    android:orientation="vertical">
+    android:background="#dad7cd"
+    android:gravity="center">
 
-    <TextView
-        android:id="@+id/textoBoasVindas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Boas Vindas"
-        android:textSize="24sp"
-        android:textStyle="bold"/>
-</LinearLayout>
+    <!-- Fundo arredondado -->
+    <LinearLayout
+        android:layout_width="350dp"
+        android:layout_height="600dp"
+        android:layout_centerInParent="true"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_bg"
+        android:gravity="center_horizontal"
+        android:padding="16dp">
+
+        <!-- Logo -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:src="@drawable/logo_app"
+            android:layout_marginTop="32dp"
+            android:layout_gravity="center"
+            android:contentDescription="Logo" />
+
+        <!-- Texto SafeZone -->
+        <TextView
+            android:id="@+id/textoBoasVindas2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SafeZone"
+            android:textColor="#dad7cd"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:layout_gravity="center" />
+
+    </LinearLayout>
+</RelativeLayout>
