@@ -56,6 +56,11 @@ class RegistrarRiscoActivity : AppCompatActivity() {
         botaoAnexo = findViewById(R.id.button_attachment)
         imagePreview = findViewById(R.id.image_preview)
 
+        val backButton = findViewById<ImageButton>(R.id.button_back)
+        backButton.setOnClickListener {
+            finish()
+        }
+
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
         setupImageLaunchers()
@@ -167,7 +172,7 @@ class RegistrarRiscoActivity : AppCompatActivity() {
 
         val risco = hashMapOf(
             "descricao" to descricao,
-            "data" to dataRegistro.toString(),
+            "data" to dataRegistro,
             "localReferencia" to localReferencia,
             "emailUsuario" to emailUsuario,
             "latitude" to latitude,
