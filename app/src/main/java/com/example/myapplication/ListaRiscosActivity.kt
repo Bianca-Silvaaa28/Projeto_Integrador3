@@ -78,8 +78,8 @@ class ListaRiscosActivity : AppCompatActivity() {
             val longitude = document.data.get("longitude").toString()
             val imagemBase64 = document.data.get("imagemBase64").toString()
 
-            val data = document.get("data").toString()
-            val dataFormatada = formatarData(data)
+            val timestamp = document.getTimestamp("data")
+            val dataFormatada = timestamp?.toDate()?.let { formatarData(it) }
 
             val risco = Risco(
                 descricao,
@@ -98,14 +98,9 @@ class ListaRiscosActivity : AppCompatActivity() {
         recyclerView.adapter = MeuAdapter(listaRiscos)
     }
 
-    private fun formatarData(data: String): String?{
-
-        val formatoOriginal = SimpleDateFormat("EEE MMM dd HH:mm:ss zzz yyyy", Locale.ENGLISH)
-        val date: Date? = formatoOriginal.parse(data)
+    private fun formatarData(data: Date): String {
         val formatoDesejado = SimpleDateFormat("dd/MM/yyyy, HH:mm", Locale.getDefault())
-        val dataFormatada = date?.let { formatoDesejado.format(it) }
-
-        return dataFormatada
+        return formatoDesejado.format(data)
     }
 
     override fun onResume() {
